@@ -1,0 +1,46 @@
+ <style type="text/css">
+      html, body, div, iframe { margin:0; padding:0; height:100%; }
+      iframe { position:fixed; display:block; width:100%; border:none; }
+     
+
+
+    </style>
+
+<div style="position: relative;">
+  <div style="position:absolute; top:90%; left:45%; width: 276px; height: 110px; z-index: 2;">
+    <button type="button" id="skip" onclick="gohome()" class="btn btn-danger" style=" z-index: 100;">Skip Intro</button>
+  </div>
+  <div id="player"  class="embed-responsive embed-responsive-16by9">
+   <iframe class="embed-responsive-item" width="" height=""  onload="iframeclick()" src="//www.youtube.com/embed/vMhG6TOFb-U?autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+	</div>
+</div>
+
+
+
+		<!-- 
+  <div id="player">
+</div>
+ 
+-->
+
+<script>
+
+function gohome(){window.location.replace("/home");}
+
+function iframeclick() {
+document.getElementById("theiframe").contentWindow.document.body.onclick = function() {
+        window.location.replace("/home");
+    }
+}
+
+
+
+  setTimeout(function() {
+    $('#player').fadeOut('fast');
+    window.location.replace("/home");
+    
+
+  
+}, 11000); // <-- time in milliseconds
+</script>
+
