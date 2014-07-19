@@ -11,11 +11,7 @@
  *= require_self
  *= require_tree .
  */
+body{
 
-body {
-    
-  
-        background: url('/assets/bg.jpg');
-       
-  
+	background-image:url('/assets/bg.jpg');
 }
