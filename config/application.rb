@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module DemoApp
   class Application < Rails::Application
+
+    config.i18n.load_path += Dir[Rails.root.join('app', 'workers').to_s]
+    config.autoload_paths << Rails.root.join('lib')
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
