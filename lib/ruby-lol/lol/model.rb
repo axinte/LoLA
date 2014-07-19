@@ -12,12 +12,12 @@ module Lol
     # @param options [Hash]
     # @return [Lol::Model]
     def initialize options = {}
-      super @raw
+      super nil
      
       @raw = options
       options.each do |attribute_name, value|
         send "#{attribute_name.to_s.underscore}=", value
-        next if attribute_name == "id"
+        attribute_name = "#{self.class.to_s.split("::")[1].downcase}_id" if attribute_name == "id"
         self[attribute_name.to_s.underscore] = value
       end
     end
