@@ -1,9 +1,19 @@
 DemoApp::Application.routes.draw do
    get "static_pages/index"
    get "static_pages/video"
+   get "static_pages/player1"
+   get "static_pages/player2"
+   get "static_pages/player3"
+   get "static_pages/player4"
+   get "static_pages/player5"
    root to: 'static_pages#video'
 
     match '/home', to: 'static_pages#index', via: :get
+    match '/player1', to: 'static_pages#player1', via: :get
+    match '/player2', to: 'static_pages#player2', via: :get
+    match '/player3', to: 'static_pages#player3', via: :get
+    match '/player4', to: 'static_pages#player4', via: :get
+    match '/player5', to: 'static_pages#player5', via: :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
